@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+  
+<persistence version="1.0"  
+xmlns:persistence="http://java.sun.com/xml/ns/persistence"  
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+xsi:schemaLocation="http://java.sun.com/xml/ns/persistence persistence_1_0.xsd "> 
+<persistence-unit name="unitName" transaction-type="RESOURCE_LOCAL">  
+  
+   <!-- 描述信息.(可选) -->  
+   <description> </description>  
+  
+  
+   <provider>org.hibernate.ejb.HibernatePersistence</provider>
+   <!-- Jta-data-source和 non-jta-data-source用于分别指定持久化提供商使用的JTA和/或non-JTA数据源的全局JNDI名称(可选) -->  
+   <jta-data-source>java:/MySqlDS</jta-data-source>  
+   <non-jta-data-source> </non-jta-data-source>  
+  
+   
+  
+   <!-- 显式列出实体类,在Java SE 环境中应该显式列出.(可选) -->  
+  <class>org.jasig.cas.entity.SysUser</class>
+    <class>org.jasig.cas.entity.SysLoginFailed</class>
+        <class>org.jasig.cas.entity.UserloginLogPo</class>
+   <!-- 声明是否扫描jar文件中标注了@Enity类加入到上下文.若不扫描,则如下:(可选) -->  
+   <exclude-unlisted-classes>false</exclude-unlisted-classes>
+  
+  
+</persistence-unit>  
+  </persistence>  

@@ -1,0 +1,375 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>数据表格_大气漂亮的Bootstrap后台管理系统模板Se7en</title>
+	<link href="/stylesheets/bootstrap.min.css" media="all" rel="stylesheet" type="text/css" />
+	<link href="/stylesheets/font-awesome.css" media="all" rel="stylesheet" type="text/css" />
+	<link href="/stylesheets/se7en-font.css" media="all" rel="stylesheet" type="text/css" />
+	<link href="/stylesheets/isotope.css" media="all" rel="stylesheet" type="text/css" />
+	<link href="/stylesheets/jquery.fancybox.css" media="all" rel="stylesheet" type="text/css" />
+	<link href="/stylesheets/fullcalendar.css" media="all" rel="stylesheet" type="text/css" />
+	<link href="/stylesheets/wizard.css" media="all" rel="stylesheet" type="text/css" />
+	<link href="/stylesheets/select2.css" media="all" rel="stylesheet" type="text/css" />
+	<link href="/stylesheets/morris.css" media="all" rel="stylesheet" type="text/css" />
+	<link href="/stylesheets/datatables.css" media="all" rel="stylesheet" type="text/css" />
+	<link href="/stylesheets/datepicker.css" media="all" rel="stylesheet" type="text/css" />
+	<link href="/stylesheets/timepicker.css" media="all" rel="stylesheet" type="text/css" />
+	<link href="/stylesheets/colorpicker.css" media="all" rel="stylesheet" type="text/css" />
+	<link href="/stylesheets/bootstrap-switch.css" media="all" rel="stylesheet" type="text/css" />
+	<link href="/stylesheets/daterange-picker.css" media="all" rel="stylesheet" type="text/css" />
+	<link href="/stylesheets/typeahead.css" media="all" rel="stylesheet" type="text/css" />
+	<link href="/stylesheets/summernote.css" media="all" rel="stylesheet" type="text/css" />
+	<link href="/stylesheets/pygments.css" media="all" rel="stylesheet" type="text/css" />
+	<link href="/stylesheets/style.css" media="all" rel="stylesheet" type="text/css" />
+	<link href="/stylesheets/color/green.css" media="all" rel="alternate stylesheet" title="green-theme" type="text/css" />
+	<link href="/stylesheets/color/orange.css" media="all" rel="alternate stylesheet" title="orange-theme" type="text/css" />
+	<link href="/stylesheets/color/magenta.css" media="all" rel="alternate stylesheet" title="magenta-theme" type="text/css" />
+	<link href="/stylesheets/color/gray.css" media="all" rel="alternate stylesheet" title="gray-theme" type="text/css" />
+	<script src="/javascripts/jquery.min.js" type="text/javascript"></script>
+	<script src="/javascripts/jquery-ui.js" type="text/javascript"></script>
+	<script src="/javascripts/bootstrap.min.js" type="text/javascript"></script>
+	<script src="/javascripts/raphael.min.js" type="text/javascript"></script>
+	<script src="/javascripts/selectivizr-min.js" type="text/javascript"></script>
+	<script src="/javascripts/jquery.mousewheel.js" type="text/javascript"></script>
+	<script src="/javascripts/jquery.vmap.min.js" type="text/javascript"></script>
+	<script src="/javascripts/jquery.vmap.sampledata.js" type="text/javascript"></script>
+	<script src="/javascripts/jquery.vmap.world.js" type="text/javascript"></script>
+	<script src="/javascripts/jquery.bootstrap.wizard.js" type="text/javascript"></script>
+	<script src="/javascripts/fullcalendar.min.js" type="text/javascript"></script>
+	<script src="/javascripts/gcal.js" type="text/javascript"></script>
+	<script src="/javascripts/jquery.dataTables.min.js" type="text/javascript"></script>
+	<script src="/javascripts/datatable-editable.js" type="text/javascript"></script>
+	<script src="/javascripts/jquery.easy-pie-chart.js" type="text/javascript"></script>
+	<script src="/javascripts/excanvas.min.js" type="text/javascript"></script>
+	<script src="/javascripts/jquery.isotope.min.js" type="text/javascript"></script>
+	<script src="/javascripts/isotope_extras.js" type="text/javascript"></script>
+	<script src="/javascripts/modernizr.custom.js" type="text/javascript"></script>
+	<script src="/javascripts/jquery.fancybox.pack.js" type="text/javascript"></script>
+	<script src="/javascripts/select2.js" type="text/javascript"></script>
+	<script src="/javascripts/styleswitcher.js" type="text/javascript"></script>
+	<script src="/javascripts/wysiwyg.js" type="text/javascript"></script>
+	<script src="/javascripts/summernote.min.js" type="text/javascript"></script>
+	<script src="/javascripts/jquery.inputmask.min.js" type="text/javascript"></script>
+	<script src="/javascripts/jquery.validate.js" type="text/javascript"></script>
+	<script src="/javascripts/bootstrap-fileupload.js" type="text/javascript"></script>
+	<script src="/javascripts/bootstrap-datepicker.js" type="text/javascript"></script>
+	<script src="/javascripts/bootstrap-timepicker.js" type="text/javascript"></script>
+	<script src="/javascripts/bootstrap-colorpicker.js" type="text/javascript"></script>
+	<script src="/javascripts/bootstrap-switch.min.js" type="text/javascript"></script>
+	<script src="/javascripts/typeahead.js" type="text/javascript"></script>
+	<script src="/javascripts/daterange-picker.js" type="text/javascript"></script>
+	<script src="/javascripts/date.js" type="text/javascript"></script>
+	<script src="/javascripts/morris.min.js" type="text/javascript"></script>
+	<script src="/javascripts/skycons.js" type="text/javascript"></script>
+	<script src="/javascripts/fitvids.js" type="text/javascript"></script>
+	<script src="/javascripts/jquery.sparkline.min.js" type="text/javascript"></script>
+	<script src="/javascripts/main.js" type="text/javascript"></script>
+	<script src="/javascripts/respond.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		function refresh(){
+			$('#dataTable1').dataTable().fnClearTable();   
+			var a = [];
+			
+			var tableName=['id','username','password','email','createDate','status','operation'];  
+			for(var i=0; i<10; i++){  
+				var tempObj=new Object();  
+				tempObj.id='<label><input id="checkAll" name="checkAll" type="checkbox" /><span></span></label>';  
+				tempObj.username="username"+i;  
+				tempObj.password="password"+i;  
+				tempObj.email="email"+i;  
+				tempObj.createDate="createDate"+i;  
+				tempObj.status='<span class="label label-success">Approved'+i+'</span>'; 
+				tempObj.operation='<div class="action-buttons"><a class="table-actions" href="#"><i class="icon-eye-open"></i></a><a class="table-actions" href="#"><i class="icon-pencil"></i></a><a class="table-actions" href="#"><i class="icon-trash"></i></a></div>';  
+				a.push(JSON.parse(JSON.stringify(tempObj, tableName)));  
+			}  
+			
+			$('#dataTable1').dataTable().fnAddData(a,true);
+			
+		}
+	</script>
+  </head>
+  <body>
+  	  <table id="mainTable" class="table"></table>
+      <!-- End Navigation -->
+      <div class="container-fluid main-content">
+        <!-- DataTables Example -->
+        <input type="button" value="refresh" onclick="refresh();"/>
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="widget-container fluid-height clearfix">
+              <div class="widget-content padded clearfix">
+                <table class="table table-bordered table-striped" id="dataTable1">
+                  <thead>
+                    <th class="check-header hidden-xs" style="width: 5%">
+                      <label><input id="checkAll" name="checkAll" type="checkbox" /><span></span></label>
+                    </th>
+                    <th style="width: 15%">用户名</th>
+                    <th style="width: 15%">密码</th>
+                    <th class="hidden-xs" style="width: 20%">邮箱</th>
+                    <th class="hidden-xs" style="width: 15%">创建时间</th>
+                    <th class="hidden-xs" style="width: 15%">状态</th>
+                    <th style="width: 15%"></th>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="check hidden-xs">
+                        <label><input name="optionsRadios1" type="checkbox" value="option1" /><span></span></label>
+                      </td>
+                      <td>
+                        Robert
+                      </td>
+                      <td>
+                        Kelso
+                      </td>
+                      <td class="hidden-xs">
+                        robert@gmail.com
+                      </td>
+                      <td class="hidden-xs">
+                        8-15-2013
+                      </td>
+                      <td class="hidden-xs">
+                        <span class="label label-success">Approved</span>
+                      </td>
+                      <td class="actions">
+                        <div class="action-buttons">
+                          <a class="table-actions" href="#"><i class="icon-eye-open"></i></a><a class="table-actions" href="#"><i class="icon-pencil"></i></a><a class="table-actions" href="#"><i class="icon-trash"></i></a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="check hidden-xs">
+                        <label><input name="optionsRadios1" type="checkbox" value="option1" /><span></span></label>
+                      </td>
+                      <td>
+                        John
+                      </td>
+                      <td>
+                        Dorian
+                      </td>
+                      <td class="hidden-xs">
+                        john@gmail.com
+                      </td>
+                      <td class="hidden-xs">
+                        8-15-2013
+                      </td>
+                      <td class="hidden-xs">
+                        <span class="label label-warning">Pending</span>
+                      </td>
+                      <td class="actions">
+                        <div class="action-buttons">
+                          <a class="table-actions" href="#"><i class="icon-eye-open"></i></a><a class="table-actions" href="#"><i class="icon-pencil"></i></a><a class="table-actions" href="#"><i class="icon-trash"></i></a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="check hidden-xs">
+                        <label><input name="optionsRadios1" type="checkbox" value="option1"/><span></span></label>
+                      </td>
+                      <td>
+                        Olivia
+                      </td>
+                      <td>
+                        Benson
+                      </td>
+                      <td class="hidden-xs">
+                        olivia@gmail.com
+                      </td>
+                      <td class="hidden-xs">
+                        8-15-2013
+                      </td>
+                      <td class="hidden-xs">
+                        <span class="label label-success">Approved</span>
+                      </td>
+                      <td class="actions">
+                        <div class="action-buttons">
+                          <a class="table-actions" href="#"><i class="icon-eye-open"></i></a><a class="table-actions" href="#"><i class="icon-pencil"></i></a><a class="table-actions" href="#"><i class="icon-trash"></i></a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="check hidden-xs">
+                        <label><input name="optionsRadios1" type="checkbox" value="option1"/><span></span></label>
+                      </td>
+                      <td>
+                        Elliot
+                      </td>
+                      <td>
+                        Stabler
+                      </td>
+                      <td class="hidden-xs">
+                        elliot@gmail.com
+                      </td>
+                      <td class="hidden-xs">
+                        8-15-2013
+                      </td>
+                      <td class="hidden-xs">
+                        <span class="label label-success">Approved</span>
+                      </td>
+                      <td class="actions">
+                        <div class="action-buttons">
+                          <a class="table-actions" href="#"><i class="icon-eye-open"></i></a><a class="table-actions" href="#"><i class="icon-pencil"></i></a><a class="table-actions" href="#"><i class="icon-trash"></i></a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="check hidden-xs">
+                        <label><input name="optionsRadios1" type="checkbox" value="option1"/><span></span></label>
+                      </td>
+                      <td>
+                        Maggie
+                      </td>
+                      <td>
+                        Smith
+                      </td>
+                      <td class="hidden-xs">
+                        maggie@gmail.com
+                      </td>
+                      <td class="hidden-xs">
+                        8-15-2013
+                      </td>
+                      <td class="hidden-xs">
+                        <span class="label label-warning">Pending</span>
+                      </td>
+                      <td class="actions">
+                        <div class="action-buttons">
+                          <a class="table-actions" href="#"><i class="icon-eye-open"></i></a><a class="table-actions" href="#"><i class="icon-pencil"></i></a><a class="table-actions" href="#"><i class="icon-trash"></i></a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="check hidden-xs">
+                        <label><input name="optionsRadios1" type="checkbox" value="option1"/><span></span></label>
+                      </td>
+                      <td>
+                        Sara
+                      </td>
+                      <td>
+                        Johnson
+                      </td>
+                      <td class="hidden-xs">
+                        sara@gmail.com
+                      </td>
+                      <td class="hidden-xs">
+                        8-15-2013
+                      </td>
+                      <td class="hidden-xs">
+                        <span class="label label-danger">Rejected</span>
+                      </td>
+                      <td class="actions">
+                        <div class="action-buttons">
+                          <a class="table-actions" href="#"><i class="icon-eye-open"></i></a><a class="table-actions" href="#"><i class="icon-pencil"></i></a><a class="table-actions" href="#"><i class="icon-trash"></i></a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="check hidden-xs">
+                        <label><input name="optionsRadios1" type="checkbox" value="option1"/><span></span></label>
+                      </td>
+                      <td>
+                        Michael
+                      </td>
+                      <td>
+                        Gold
+                      </td>
+                      <td class="hidden-xs">
+                        michael@gmail.com
+                      </td>
+                      <td class="hidden-xs">
+                        8-15-2013
+                      </td>
+                      <td class="hidden-xs">
+                        <span class="label label-success">Approved</span>
+                      </td>
+                      <td class="actions">
+                        <div class="action-buttons">
+                          <a class="table-actions" href="#"><i class="icon-eye-open"></i></a><a class="table-actions" href="#"><i class="icon-pencil"></i></a><a class="table-actions" href="#"><i class="icon-trash"></i></a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="check hidden-xs">
+                        <label><input name="optionsRadios1" type="checkbox" value="option1"/><span></span></label>
+                      </td>
+                      <td>
+                        Rita
+                      </td>
+                      <td>
+                        Johnson
+                      </td>
+                      <td class="hidden-xs">
+                        rita@gmail.com
+                      </td>
+                      <td class="hidden-xs">
+                        8-15-2013
+                      </td>
+                      <td class="hidden-xs">
+                        <span class="label label-success">Approved</span>
+                      </td>
+                      <td class="actions">
+                        <div class="action-buttons">
+                          <a class="table-actions" href="#"><i class="icon-eye-open"></i></a><a class="table-actions" href="#"><i class="icon-pencil"></i></a><a class="table-actions" href="#"><i class="icon-trash"></i></a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="check hidden-xs">
+                        <label><input name="optionsRadios1" type="checkbox" value="option1"/><span></span></label>
+                      </td>
+                      <td>
+                        Dexter
+                      </td>
+                      <td>
+                        Morgan
+                      </td>
+                      <td class="hidden-xs">
+                        dexter@gmail.com
+                      </td>
+                      <td class="hidden-xs">
+                        8-15-2013
+                      </td>
+                      <td class="hidden-xs">
+                        <span class="label label-success">Approved</span>
+                      </td>
+                      <td class="actions">
+                        <div class="action-buttons">
+                          <a class="table-actions" href="#"><i class="icon-eye-open"></i></a><a class="table-actions" href="#"><i class="icon-pencil"></i></a><a class="table-actions" href="#"><i class="icon-trash"></i></a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="check hidden-xs">
+                        <label><input name="optionsRadios1" type="checkbox" value="option1"/><span></span></label>
+                      </td>
+                      <td>
+                        Ben
+                      </td>
+                      <td>
+                        Miller
+                      </td>
+                      <td class="hidden-xs">
+                        ben@gmail.com
+                      </td>
+                      <td class="hidden-xs">
+                        8-15-2013
+                      </td>
+                      <td class="hidden-xs">
+                        <span class="label label-warning">Pending</span>
+                      </td>
+                      <td class="actions">
+                        <div class="action-buttons">
+                          <a class="table-actions" href="#"><i class="icon-eye-open"></i></a><a class="table-actions" href="#"><i class="icon-pencil"></i></a><a class="table-actions" href="#"><i class="icon-trash"></i></a>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end DataTables Example -->
+      </div>
+  </body>
+
+</html>

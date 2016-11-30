@@ -1,0 +1,20 @@
+<head>
+	
+	<script src="http://resource.bp.coolshow.com/static/comp/common/jquery.min.js" type="text/javascript"></script>
+		
+	<script type="text/javascript">
+	
+		$.ajax({
+                url : 'http://localhost:8080/registerLogin?username=coolshow&password=Coolshow6668881&vcode=4588&service=http://nwtest.coolshow.net/',
+                type : 'POST',
+                dataType : 'json',
+                async : false,//加上这句试试
+                success : function(root) {
+					console.info(root);
+				}
+		});
+	</script>
+
+		
+		
+</head>
